@@ -1,0 +1,15 @@
+.legend-container {
+  display: flex;
+  align-items: center;
+}
+
+.legend-item {
+  margin-right: 16px;
+}
+
+.legend-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
