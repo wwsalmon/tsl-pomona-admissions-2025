@@ -14,8 +14,10 @@ const numStudents = 469;
 const numStudents2024 = 460;
 const numGap = 83;
 const numGap2024 = 7;
-const indexAccepted = d3.shuffle((new Array(numApplicants).fill(0)).map((d, i) => i)).slice(0, numAccepted);
-const indexStudents = indexAccepted.sort((a, b) => a - b).slice(0, numStudents - numGap);
+// const indexAccepted = d3.shuffle((new Array(numApplicants).fill(0)).map((d, i) => i)).slice(0, numAccepted);
+const indexAccepted = new Array(numAccepted).fill(0).map((d, i) => i);
+// const indexStudents = indexAccepted.sort((a, b) => a - b).slice(0, numStudents - numGap);
+const indexStudents = new Array(numStudents).fill(0).map((d, i) => i);
 
 const percentages = {
     asian: 0.155,
