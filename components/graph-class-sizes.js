@@ -1,5 +1,5 @@
 const React = require('react');
-const { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip, Legend } = require("recharts");
+const { ResponsiveContainer, LineChart, XAxis, YAxis, Line, Tooltip, Legend, CartesianGrid } = require("recharts");
 
 class CustomComponent extends React.Component {
     render() {
@@ -19,14 +19,15 @@ class CustomComponent extends React.Component {
                     {"Semester": "Fall '20", "First-year": 404, "Sophomore": 373, "Junior": 335, "Senior": 352, "Previous Max": 451},
                     {"Semester": "Fall '21", "First-year": 469, "Sophomore": 460, "Junior": 455, "Senior": 363, "Previous Max": 451},
                 ]}>
+                    <Legend/>
+                    <CartesianGrid/>
                     <XAxis dataKey="Semester"/>
                     <YAxis domain={[300, 500]}/>
-                    <Line dataKey="First-year" stroke="#F06FBC" strokeWidth={2}/>
-                    <Line dataKey="Sophomore" stroke="#A465BE" strokeWidth={2}/>
-                    <Line dataKey="Junior" stroke="#00549C" strokeWidth={2}/>
-                    <Line dataKey="Senior" stroke="#00C8A3" strokeWidth={2}/>
+                    <Line dataKey="First-year" stroke="#F06FBC" strokeWidth={3}/>
+                    <Line dataKey="Sophomore" stroke="#A465BE" strokeWidth={3}/>
+                    <Line dataKey="Junior" stroke="#00549C" strokeWidth={3}/>
+                    <Line dataKey="Senior" stroke="#00C8A3" strokeWidth={3}/>
                     <Line dataKey="Previous Max" stroke="blue" dot={false} />
-                    <Legend/>
                     <Tooltip/>
                 </LineChart>
             </ResponsiveContainer>
