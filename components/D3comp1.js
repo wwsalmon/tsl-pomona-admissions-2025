@@ -124,7 +124,7 @@ class D3comp1 extends D3Component {
             .append("text")
             .attr("class", "classLabel")
             .text(d => `co${d}`)
-            .attr("x", d => ((d === 2024) ? padding : 500))
+            .attr("x", d => ((d === 2025) ? padding : 500))
             .attr("y", 36)
             .style("opacity", 0)
             .attr("fill", "#ffffff")
@@ -395,7 +395,7 @@ class D3comp1 extends D3Component {
                     .selectAll("circle.student2024")
                     .transition()
                     .duration(750)
-                    .style("fill", (d, i) => (i < 0.28 * numStudents2024 ? "blue" : "#ffffff"))
+                    .style("fill", (d, i) => (i < 0.213 * numStudents2024 ? "blue" : "#ffffff"))
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([

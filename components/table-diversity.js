@@ -35,7 +35,7 @@ class CustomComponent extends React.Component {
                     {raceData.map((row, i) => (
                         <tr key={i}>
                             <td style={{display: "flex", alignItems: "center"}}>
-                                <div style={{width: 12, height: 12, borderRadius: "50%", backgroundColor: categoryColors[row.label], marginRight: 6}}></div>
+                                <div style={{width: 12, height: 12, borderRadius: "50%", backgroundColor: categoryColors[row.label], marginRight: 6, flexShrink: 0}}></div>
                                 <span>{row.label}</span>
                             </td>
                             <td>{row[2024]}</td>

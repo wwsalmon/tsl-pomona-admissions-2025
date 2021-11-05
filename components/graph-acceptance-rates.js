@@ -11,10 +11,10 @@ class CustomComponent extends React.Component {
                     {"Class": "2023", "Acceptance rate": 7.4},
                     {"Class": "2024", "Acceptance rate": 8.6},
                     {"Class": "2025", "Acceptance rate": 6.5},
-                ]} margin={{left: 20, bottom: 20, right: 20}}>
-                    <Legend position="bottom"/>
+                ]}>
+                    <Legend position="bottom" wrapperStyle={{bottom: "unset"}}/>
                     <CartesianGrid/>
-                    <XAxis dataKey="Class" label={{value: "Class year", position: "insideBottom"}}/>
+                    <XAxis dataKey="Class" label={{value: "Class year", position: "bottom"}}/>
                     <YAxis domain={[5, 10]} label={{value: "Acceptance rate (%)", angle: -90, position: "insideLeft"}}/>
                     <Line dataKey="Acceptance rate" stroke="blue" strokeWidth={3} dot={{r: 4}}/>
                     <Tooltip/>

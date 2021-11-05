@@ -2,7 +2,6 @@
 
 [Header
   title:"Pomona's class of 2025, visualized"
-  subtitle:"subtitle"
   author:"Samson Zhang"
   authorLink:"https://www.samsonzhang.com"
   date:"Oct 24, 2021"
@@ -10,7 +9,9 @@
   color: "#000"
    /]
 
-Amid something, we are all habada
+While the class of 2025 is Pomona College’s largest class to date, by the numbers, it also represents **one of the less diverse class profiles in several years.**
+
+TSL obtained statistics for the class of 2025's profile from Pomona College Dean of Admissions and Financial Aid Seth Allen at a faculty meeting earlier this year. Keep scrolling for a **breakdown of the numbers, and an analysis of how they came to be.**
 
 [div id:"d3-legend" style:`{"display": "none", "position": "fixed", "padding": "16px", "bottom": 0, "left": 0, "zIndex": 1, backgroundColor: "#dddddd", borderRadius: "0 16px 0 0"}`]Test[/div]
 
@@ -23,68 +24,58 @@ Amid something, we are all habada
   [/Graphic]
 
   [Step]
-    **A record-high 11,000+ students applied** to Pomona's class of 2025, a marked increase over the usual 10,000-10,500 applications in previous years. 10,388 applied to the class of 2024, and 10,401 to the class of 2023.
+    **A record-high 11,000+ students applied** to Pomona's class of 2025, a marked increase over the 10,388 who applied to the [class of 2024](http://web.archive.org/web/20211030051425/https://www.pomona.edu/about/profile-who-goes-pomona) and 10,401 to the [class of 2023](http://web.archive.org/web/20200328171735/https://www.pomona.edu/about/profile-who-goes-pomona).
   [/Step]
 
   [Step]
     // graph of acceptance rate over time
-    The increased number of applications, and the admission of only 772 students compared to 895 students the year before, made for **a record low acceptance rate of ~6.5%.** The acceptance rate was 8.6% the year before.
+    The increased number of applications, and the admission of 772 students compared to 895 students the year before, made for **a record low acceptance rate of ~6.5%.** The acceptance rate was 8.6% the year before.
 
     [GraphAcceptanceRates][/GraphAcceptanceRates]
   [/Step]
 
   [Step]
-    Why the lower number of admits? Chiefly because **83 students admitted to the class of 2024 deferred their enrollment to Fall 2020,** the most in Pomona's history. Only 4 students from the class of 2025 deferred their enrollment.
+    Why the lower number of admits? Chiefly because **83 students admitted to the class of 2024 deferred their enrollment to fall 2021,** the most in Pomona's history. Only 4 students from the class of 2025 deferred their enrollment.
   [/Step]
 
   [Step]
-    Of the 855 newly admitted and deferred enrollment students, 453 enrolled, according to Seth Allen, Dean of Admissions at Pomona College. As of fall 2021, the registrar's office reports that the final size of the class of 2025 is 469, while the class of 2024 has 460 students and the class of 2023 455. **All three classes currently have more students than [any class has had in the last ten years.](https://www.pomona.edu/administration/registrar/reports-statistics/student-body)**
+    Of the 855 newly admitted and deferred enrollment students, 453 enrolled, according to Allen.
+
+    As of fall 2021, the [registrar's office reports](https://www.pomona.edu/administration/registrar/reports-statistics/student-body) that the final size of the class of 2025 is 469, while the class of 2024 has 460 students and the class of 2023 455. **All three classes currently have more students than any class has had in the last ten years.**
 
     [GraphClassSizes][/GraphClassSizes]
   [/Step]
 
   [Step]
-    The class of 2024 is one of Pomona's most diverse. **The class of 2025 is slightly less so.**
+    The class of 2024 is one of Pomona's most diverse, with 54.4% identifying as domestic students of color. **The class of 2025 is slightly less so, with the same stat at 49%.**
 
     [TableDiversity][/TableDiversity]
   [/Step]
 
   [Step]
-    Notably, **only 13% of the class of 2025 are first-gen students,** compared to 28% of the class of 2024.
+    Notably, **only 13% of the class of 2025 are first-gen students,** compared to 21.3% of the class of 2024.
   [/Step]
 
   [Step]
-    This is in spite of programs like QuestBridge Match and the Posse Foundation running as normal.
+    This is in spite of programs like QuestBridge Match and the Posse Foundation running as normal, accounting for 17 and 18 students in the class of 2025, respectively.
   [/Step]
 
   [Step]
     Again, the record amount of students admitted to the class of 2024 who deferred their enrollment may be to blame. **Not a single one of the 83 students who did so were first-generation students.**
 
-    Seth Allen, Pomona College's Dean of Admissions and Financial Aid, also attributed the decrease in the number of FLI and other underrepresented students to the fact that **the COVID pandemic forced the admissions team's outreach initiatives to go virtual,** preventing fly-in programs and in-person visits from running.
+    Allen also attributed the decrease in the number of FLI and other underrepresented students to the fact that **the COVID pandemic forced the admissions team's outreach initiatives to go virtual,** preventing fly-in programs and in-person visits from running.
   [/Step]
 
 [/Scroller]
 
 [br/]
-# Technical Details
 
-## Installation
+The return to in-person operations is expected to help normalize the admissions office’s outreach efforts, Allen said.
 
-- Make sure you have `idyll` installed (`npm i -g idyll`).
-- Clone this repo and run `npm install`.
+“For example, the admissions office has hosted Access Weekend events this month, inviting underrepresented students to campus to learn more about Pomona,” he added. “We are planning for in-person events in the spring and fully expect to return to a more balanced yield among all of our admitted students.”
 
-## Developing a post locally
+The shift in Pomona’s first-year class mirrored trends across the state and nation as the COVID-19 pandemic dampened the number of low-income students who applied for college. California saw a ten percent drop in high school seniors filling out the Free Application for Federal Student Aid, according to the Public Policy Institute of California.
 
-Run `idyll`.
+“Distance learning during the pandemic has forced student advising and college counseling services online—making it more difficult for students to receive essential guidance when navigating the complex college application process,” PPIC education researcher Kevin Cook said in a March article. “This is particularly concerning for low-income students who are less likely to have internet access at home.”
 
-## Building a post for production
-
-Run `idyll build`. The output will appear in the top-level `build` folder. To change the output location, change the `output` option in `package.json`.
-
-## Deploying
-
-Make sure your post has been built, then deploy the docs folder via any static hosting service.
-
-## Dependencies
-
-You can install custom dependencies by running `npm install <package-name> --save`. Note that any collaborators will also need download the package locally by running `npm install` after pulling the changes.
+“I hope to not repeat the impact of this year on the class of 2026,” Allen added in the faculty meeting. “The staff has been hard at work recruiting the new group for the last few months. We fully expect to return to the strong student diversity in the class of 2026.”
