@@ -2,8 +2,13 @@ body {
   font-family: "Lora", serif;
 }
 
+.idyll-root {
+  margin: 0;
+}
+
 #idyll-scroll-0 {
   background-color: #222222;
+  margin-top: 0;
 }
 
 .idyll-scroll-graphic {

@@ -1,17 +1,16 @@
 [meta title:"Pomona's co2025, visualized | The Student Life" description:"Short description of your project" /]
 
-[Header
-  title:"Pomona's class of 2025, visualized"
-  author:"Samson Zhang"
-  authorLink:"https://www.samsonzhang.com"
-  date:"Oct 24, 2021"
-  background: "#fff"
-  color: "#000"
-   /]
+// [Header
+//  title:"Pomona's class of 2025, visualized"
+//  author:"Samson Zhang and Jenna McMurty"
+//  date:"Oct 24, 2021"
+//  background: "#fff"
+//  color: "#000"
+//   /]
 
-While the class of 2025 is Pomona College’s largest class to date, by the numbers, it also represents **one of the less diverse class profiles in several years.**
+// While the class of 2025 is Pomona College’s largest class to date, by the numbers, it also represents **one of the less diverse class profiles in several years.**
 
-TSL obtained statistics for the class of 2025's profile from Pomona College Dean of Admissions and Financial Aid Seth Allen at a faculty meeting earlier this year. Keep scrolling for a **breakdown of the numbers, and an analysis of how they came to be.**
+// TSL obtained statistics for the class of 2025's profile from Pomona College Dean of Admissions and Financial Aid Seth Allen at a faculty meeting earlier this year. Keep scrolling for a **breakdown of the numbers, and an analysis of how they came to be.**
 
 [div id:"d3-legend" style:`{"display": "none", "position": "fixed", "padding": "16px", "bottom": 0, "left": 0, "zIndex": 1, backgroundColor: "#dddddd", borderRadius: "0 16px 0 0"}`]Test[/div]
 
@@ -68,14 +67,14 @@ TSL obtained statistics for the class of 2025's profile from Pomona College Dean
 
 [/Scroller]
 
-[br/]
+// [br/]
 
-The return to in-person operations is expected to help normalize the admissions office’s outreach efforts, Allen said.
+// The return to in-person operations is expected to help normalize the admissions office’s outreach efforts, Allen said.
 
-“For example, the admissions office has hosted Access Weekend events this month, inviting underrepresented students to campus to learn more about Pomona,” he added. “We are planning for in-person events in the spring and fully expect to return to a more balanced yield among all of our admitted students.”
+// “For example, the admissions office has hosted Access Weekend events this month, inviting underrepresented students to campus to learn more about Pomona,” he added. “We are planning for in-person events in the spring and fully expect to return to a more balanced yield among all of our admitted students.”
 
-The shift in Pomona’s first-year class mirrored trends across the state and nation as the COVID-19 pandemic dampened the number of low-income students who applied for college. California saw a ten percent drop in high school seniors filling out the Free Application for Federal Student Aid, according to the Public Policy Institute of California.
+// The shift in Pomona’s first-year class mirrored trends across the state and nation as the COVID-19 pandemic dampened the number of low-income students who applied for college. California saw a ten percent drop in high school seniors filling out the Free Application for Federal Student Aid, according to the Public Policy Institute of California.
 
-“Distance learning during the pandemic has forced student advising and college counseling services online—making it more difficult for students to receive essential guidance when navigating the complex college application process,” PPIC education researcher Kevin Cook said in a March article. “This is particularly concerning for low-income students who are less likely to have internet access at home.”
+// “Distance learning during the pandemic has forced student advising and college counseling services online—making it more difficult for students to receive essential guidance when navigating the complex college application process,” PPIC education researcher Kevin Cook said in a March article. “This is particularly concerning for low-income students who are less likely to have internet access at home.”
 
-“I hope to not repeat the impact of this year on the class of 2026,” Allen added in the faculty meeting. “The staff has been hard at work recruiting the new group for the last few months. We fully expect to return to the strong student diversity in the class of 2026.”
+// “I hope to not repeat the impact of this year on the class of 2026,” Allen added in the faculty meeting. “The staff has been hard at work recruiting the new group for the last few months. We fully expect to return to the strong student diversity in the class of 2026.”
