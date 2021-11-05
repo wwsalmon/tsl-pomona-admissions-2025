@@ -399,7 +399,8 @@ class D3comp1 extends D3Component {
 
                 break;
             }
-            case 7: {
+            case 7:
+            case 8: {
                 this.svg
                     .selectAll("circle.student")
                     .transition()
