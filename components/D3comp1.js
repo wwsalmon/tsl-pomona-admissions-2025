@@ -26,6 +26,7 @@ const percentages = {
     native: 0.01,
     multiracial: 0.005,
     international: 0.15,
+    white: 0.325,
     unknown: 0.115,
 }
 
@@ -35,6 +36,7 @@ const percentages2024 = {
     latinx: 0.165,
     multiracial: 0.073,
     international: 0.105,
+    white: 0.306,
     unknown: 0.045,
 }
 
@@ -300,10 +302,13 @@ class D3comp1 extends D3Component {
                 break;
             }
             case 5: {
-                const categories = ["black", "native", "latinx", "asian", "multiracial", "international", "unknown"];
+                const categories = ["black", "native", "latinx", "asian", "multiracial", "international", "white", "unknown"];
                 const categoryNums = categories.map(d => numStudents * percentages[d]);
                 const categoryNums2024 = categories.map(d => numStudents2024 * (percentages2024[d] || 0));
                 const categoryCutoffs = categories.map((d, i) => [d, categoryNums.slice(0, i + 1).reduce((a, b) => a + b, 0)]);
+
+                console.log(categoryCutoffs);
+
                 const categoryCutoffs2024 = categories.map((d, i) => [d, categoryNums2024.slice(0, i + 1).reduce((a, b) => a + b, 0)]);
                 const categoryColors = {
                     black: "#F06FBC",
@@ -312,7 +317,8 @@ class D3comp1 extends D3Component {
                     asian: "#00549C",
                     multiracial: "#00A5BC",
                     international: "#00C8A3",
-                    unknown: "#88E581",
+                    white: "#88E581",
+                    unknown: "#000000",
                 };
 
                 this.svg

@@ -55,14 +55,16 @@ Amid something, we are all habada
     The class of 2024 is one of Pomona's most diverse. **The class of 2025 is slightly less so.**
 
     // replace with custom table component with colors
-    [Table data:`[
-        {"Race/Ethnicity": "Asian American", 2025: "🔻 15.5%", 2024: "19.8%"},
-        {"Race/Ethnicity": "Black/African American", 2025: "🔻 7%", 2024: "10.8%"},
-        {"Race/Ethnicity": "Latinx", 2025: "🔻 15.5%", 2024: "16.5%"},
-        {"Race/Ethnicity": "International", 2025: "🔼 15%", 2024: "10.5%"},
-        {"Race/Ethnicity": "Multiracial", 2025: "🔻 0.5%", 2024: "7.3%"},
-        {"Race/Ethnicity": "White", 2025: "🔼 32.5%", 2024: "30.6%"},
-    ]` columns:`[{header: "Race/Ethnicity"}, {header: 2025}, {header: 2024}]` /]
+    // [Table data:`[
+    //    {"Race/Ethnicity": "Asian American", 2025: "🔻 15.5%", 2024: "19.8%"},
+    //    {"Race/Ethnicity": "Black/African American", 2025: "🔻 7%", 2024: "10.8%"},
+    //    {"Race/Ethnicity": "Latinx", 2025: "🔻 15.5%", 2024: "16.5%"},
+    //    {"Race/Ethnicity": "International", 2025: "🔼 15%", 2024: "10.5%"},
+    //    {"Race/Ethnicity": "Multiracial", 2025: "🔻 0.5%", 2024: "7.3%"},
+    //    {"Race/Ethnicity": "White", 2025: "🔼 32.5%", 2024: "30.6%"},
+    // ]` columns:`[{header: "Race/Ethnicity"}, {header: 2025}, {header: 2024}]` /]
+
+    [TableDiversity][/TableDiversity]
   [/Step]
 
   [Step]
