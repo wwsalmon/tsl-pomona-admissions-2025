@@ -5,7 +5,7 @@ class CustomComponent extends React.Component {
     render() {
         const { hasError, idyll, updateProps, ...props } = this.props;
         return (
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={[
                     {"Semester": "Fall '11", "First-year": 397, "Sophomore": 409, "Junior": 391, "Senior": 370, "Previous Max": 451},
                     {"Semester": "Fall '12", "First-year": 401, "Sophomore": 395, "Junior": 405, "Senior": 384, "Previous Max": 451},
@@ -18,15 +18,15 @@ class CustomComponent extends React.Component {
                     {"Semester": "Fall '19", "First-year": 418, "Sophomore": 422, "Junior": 421, "Senior": 427, "Previous Max": 451},
                     {"Semester": "Fall '20", "First-year": 404, "Sophomore": 373, "Junior": 335, "Senior": 352, "Previous Max": 451},
                     {"Semester": "Fall '21", "First-year": 469, "Sophomore": 460, "Junior": 455, "Senior": 363, "Previous Max": 451},
-                ]}>
+                ]} margin={{left: 20, bottom: 20, right: 20}}>
                     <Legend/>
                     <CartesianGrid/>
-                    <XAxis dataKey="Semester"/>
-                    <YAxis domain={[300, 500]}/>
-                    <Line dataKey="First-year" stroke="#F06FBC" strokeWidth={3}/>
-                    <Line dataKey="Sophomore" stroke="#A465BE" strokeWidth={3}/>
-                    <Line dataKey="Junior" stroke="#00549C" strokeWidth={3}/>
-                    <Line dataKey="Senior" stroke="#00C8A3" strokeWidth={3}/>
+                    <XAxis dataKey="Semester" label={{value: "Semester", position: "insideBottom"}}/>
+                    <YAxis domain={[300, 500]} label={{value: "Number of students", angle: -90, position: "insideLeft"}}/>
+                    <Line dataKey="First-year" stroke="#F06FBC" strokeWidth={3} dot={{r: 4}}/>
+                    <Line dataKey="Sophomore" stroke="#A465BE" strokeWidth={3} dot={{r: 4}}/>
+                    <Line dataKey="Junior" stroke="#00549C" strokeWidth={3} dot={{r: 4}}/>
+                    <Line dataKey="Senior" stroke="#00C8A3" strokeWidth={3} dot={{r: 4}}/>
                     <Line dataKey="Previous Max" stroke="blue" dot={false} />
                     <Tooltip/>
                 </LineChart>
