@@ -195,6 +195,36 @@ class D3comp1 extends D3Component {
                 .attr("r", 0);
         }
 
+        if (state >= 4) {
+            this.svg
+                .selectAll("circle.harvard, circle.harvard2024")
+                .transition()
+                .duration(750)
+                .attr("r", 0)
+
+            const numPerRow = Math.floor(numCircles / 4) - 1;
+
+            this.svg
+                .selectAll("circle.student")
+                .style("fill", "#ffffff")
+                .transition()
+                .duration(750)
+                .style("opacity", 1)
+                .attr("r", 3)
+                .attr('cx', (d, i) => (i % numPerRow * 12 + padding))
+                .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
+
+            this.svg
+                .selectAll("circle.student2024")
+                .style("fill", "#ffffff")
+                .transition()
+                .duration(750)
+                .style("opacity", 0.5)
+                .attr("r", 3)
+                .attr('cx', (d, i) => (i % numPerRow * 12 + padding + 12 * (numPerRow + 2)))
+                .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
+        }
+
         switch (state) {
             case 1: {
                 this.svg
@@ -294,32 +324,6 @@ class D3comp1 extends D3Component {
                 break;
             }
             case 4: {
-                this.svg
-                    .selectAll("circle.harvard, circle.harvard2024")
-                    .transition()
-                    .duration(750)
-                    .attr("r", 0)
-
-                const numPerRow = Math.floor(numCircles / 4) - 1;
-
-                this.svg
-                    .selectAll("circle.student")
-                    .style("fill", "#ffffff")
-                    .transition()
-                    .duration(750)
-                    .attr("r", 3)
-                    .attr('cx', (d, i) => (i % numPerRow * 12 + padding))
-                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
-
-                this.svg
-                    .selectAll("circle.student2024")
-                    .style("fill", "#ffffff")
-                    .transition()
-                    .duration(750)
-                    .attr("r", 3)
-                    .attr('cx', (d, i) => (i % numPerRow * 12 + padding + 12 * (numPerRow + 2)))
-                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
-
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
                         {label: "One enrolled student", color: "#ffffff"},
