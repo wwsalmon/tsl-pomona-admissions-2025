@@ -7,9 +7,9 @@ const labelHeight = 32;
 const numCircles = Math.floor((1000 - (padding * 2) - 1) / 6 + 1);
 
 // data
-const numApplicants = 11462;
+const numApplicants = 11000;
 const numApplicants2024 = 10388;
-const numAccepted = 745;
+const numAccepted = 772;
 const numAccepted2024 = 895;
 const numStudents = 469;
 const numStudents2024 = 460;
@@ -122,7 +122,7 @@ class D3comp1 extends D3Component {
             .append("text")
             .attr("class", "classLabel")
             .text(d => `co${d}`)
-            .attr("x", d => (d === 2024) ? padding : (containerWidth / 2 + 2 * padding))
+            .attr("x", d => (d === 2024) ? padding : (containerWidth / 2))
             .attr("y", 36)
             .style("opacity", 0)
             .attr("fill", "#ffffff")
