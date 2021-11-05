@@ -18,10 +18,9 @@ class CustomComponent extends React.Component {
             {"label": "Black/African American", 2025: "🔻 7%", 2024: "10.8%"},
             {"label": "Latinx", 2025: "🔻 15.5%", 2024: "16.5%"},
             {"label": "Asian American", 2025: "🔻 15.5%", 2024: "19.8%"},
-            {"label": "Multiracial", 2025: "🔻 0.5%", 2024: "7.3%"},
             {"label": "International", 2025: "🔼 15%", 2024: "10.5%"},
             {"label": "White", 2025: "🔼 32.5%", 2024: "30.6%"},
-            {"label": "Unknown", 2025: "14%", 2024: "4.5%"},
+            {"label": "Unknown/Other", 2025: "14.5%", 2024: "11.8%"},
         ]
 
         return (

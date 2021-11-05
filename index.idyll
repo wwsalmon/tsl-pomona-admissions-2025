@@ -40,29 +40,11 @@ Amid something, we are all habada
   [Step]
     Of the 828 newly admitted and deferred enrollment students, 469 enrolled and became members of the class of 2025. The class of 2024 has 460 students and the class of 2023 455. **All three classes currently have more students than [any class has had in the last ten years.](https://www.pomona.edu/administration/registrar/reports-statistics/student-body)**
 
-    // replace with graph
-    // [Table data:`[
-    //    {"Semester": "Fall '21", "First-year": 469, "Sophomore": 460, "Junior": 455, "Senior": 363},
-    //    {"Semester": "Fall '20", "First-year": 404, "Sophomore": 373, "Junior": 335, "Senior": 352},
-    //    {"Semester": "Fall '19", "First-year": 418, "Sophomore": 422, "Junior": 421, "Senior": 427},
-    //    {"Semester": "Fall '18", "First-year": 415, "Sophomore": 423, "Junior": 427, "Senior": 390},
-    // ]` /]
-
     [GraphClassSizes][/GraphClassSizes]
   [/Step]
 
   [Step]
     The class of 2024 is one of Pomona's most diverse. **The class of 2025 is slightly less so.**
-
-    // replace with custom table component with colors
-    // [Table data:`[
-    //    {"Race/Ethnicity": "Asian American", 2025: "🔻 15.5%", 2024: "19.8%"},
-    //    {"Race/Ethnicity": "Black/African American", 2025: "🔻 7%", 2024: "10.8%"},
-    //    {"Race/Ethnicity": "Latinx", 2025: "🔻 15.5%", 2024: "16.5%"},
-    //    {"Race/Ethnicity": "International", 2025: "🔼 15%", 2024: "10.5%"},
-    //    {"Race/Ethnicity": "Multiracial", 2025: "🔻 0.5%", 2024: "7.3%"},
-    //    {"Race/Ethnicity": "White", 2025: "🔼 32.5%", 2024: "30.6%"},
-    // ]` columns:`[{header: "Race/Ethnicity"}, {header: 2025}, {header: 2024}]` /]
 
     [TableDiversity][/TableDiversity]
   [/Step]
