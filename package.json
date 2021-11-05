@@ -6,7 +6,8 @@
     "theme": "default",
     "layout": "centered",
     "authorView": false,
-    "css": "./styles.css"
+    "css": "./styles.css",
+    "googleFonts": ["Lora", "Inter"]
   },
   "dependencies": {
     "d3": "^4.0.0",

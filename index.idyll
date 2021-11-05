@@ -12,7 +12,7 @@
 
 Amid something, we are all habada
 
-[div id:"d3-legend" style:`{"display": "none", "position": "fixed", "padding": "16px", "bottom": 0, "left": 0}`]Test[/div]
+[div id:"d3-legend" style:`{"display": "none", "position": "fixed", "padding": "16px", "bottom": 0, "left": 0, "zIndex": 1, backgroundColor: "#dddddd", borderRadius: "0 16px 0 0"}`]Test[/div]
 
 [var name:"state" value:-1 /]
 

@@ -3,6 +3,7 @@ const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
 const padding = 24;
+const labelHeight = 32;
 const numCircles = Math.floor((1000 - (padding * 2) - 1) / 6 + 1);
 
 // data
@@ -75,6 +76,7 @@ class D3comp1 extends D3Component {
             .data(new Array(numApplicants).fill(0))
             .enter()
             .append('circle')
+            .style("fill", "#ffffff")
             .attr('r', 1.5)
             .attr('cx', (d, i) => (i % numCircles) * 6 + padding)
             .attr('cy', (d, i) => Math.floor(i / numCircles) * 6 + padding)
@@ -100,6 +102,7 @@ class D3comp1 extends D3Component {
             .attr("cx", (d, i) => ((i % (Math.floor(numCircles / 4) - 1)) * 12 + padding + (Math.floor(numCircles / 4) + 1) * 12))
             .attr('cy', (d, i) => (Math.floor((i) / (Math.floor(numCircles / 4) - 1)) * 12 + padding))
             .style("opacity", 0.5)
+            .style("fill", "#ffffff")
             .attr("class", (d, i) => ("accepted2024" + (i < (numStudents2024 - numGap2024) ? " student2024" : " harvard2024")))
 
         svg
@@ -113,6 +116,19 @@ class D3comp1 extends D3Component {
             .style("opacity", 0.5)
             .style("fill", "blue")
             .attr("class", "gapper2024 student2024")
+
+        svg
+            .selectAll("text.classLabel")
+            .data([2024, 2025])
+            .enter()
+            .append("text")
+            .attr("class", "classLabel")
+            .text(d => `co${d}`)
+            .attr("x", d => (d === 2024) ? padding : (containerWidth / 2 + 2 * padding))
+            .attr("y", 36)
+            .style("opacity", 0)
+            .attr("fill", "#ffffff")
+            .style("size", 20);
     }
 
     update(props, oldProps) {
@@ -125,7 +141,7 @@ class D3comp1 extends D3Component {
         if (state !== 1 && state < 6) {
             this.svg
                 .selectAll("circle.applicant")
-                .style("fill", "#000000")
+                .style("fill", "#ffffff")
                 .transition()
                 .duration(750)
 
@@ -142,6 +158,12 @@ class D3comp1 extends D3Component {
                 .transition()
                 .duration(750)
                 .attr("r", 0);
+
+            this.svg
+                .selectAll("text.classLabel")
+                .transition()
+                .duration(750)
+                .style("opacity", 0);
         }
 
         if (state >= 3) {
@@ -150,6 +172,12 @@ class D3comp1 extends D3Component {
                 .transition()
                 .duration(750)
                 .attr("r", 3);
+
+            this.svg
+                .selectAll("text.classLabel")
+                .transition()
+                .duration(750)
+                .style("opacity", 1);
         }
 
         if (state < 4) {
@@ -163,7 +191,7 @@ class D3comp1 extends D3Component {
         if (state < 6) {
             this.svg
                 .selectAll("circle.accepted2024")
-                .style("fill", "#000000")
+                .style("fill", "#ffffff")
                 .transition()
                 .duration(750)
                 .attr("r", 0);
@@ -178,12 +206,12 @@ class D3comp1 extends D3Component {
                     .attr('r', 1.5)
                     .attr('cx', (d, i) => ((i % numCircles) * 6 + padding))
                     .attr('cy', (d, i) => (Math.floor(i / numCircles) * 6 + padding))
-                    .style("fill", (d, i) => ((i > numApplicants2024) ? "red" : "#000000"));
+                    .style("fill", (d, i) => ((i > numApplicants2024) ? "blue" : "#ffffff"));
 
                 d3.select("#d3-legend")
                     .html(
                         getLegendHtml(
-                            [{label: "One application", color: "#000000"}, {label: "More applications than previous year", color: "red"}]
+                            [{label: "One application", color: "#ffffff"}, {label: "More applications than previous year", color: "blue"}]
                         )
                     )
 
@@ -206,7 +234,7 @@ class D3comp1 extends D3Component {
                     .attr("r", 0);
 
                 d3.select("#d3-legend")
-                    .html(getLegendHtml([{label: "One admitted student", color: "#000000"}]));
+                    .html(getLegendHtml([{label: "One admitted student", color: "#ffffff"}]));
 
                 break;
             }
@@ -219,14 +247,14 @@ class D3comp1 extends D3Component {
                     .duration(750)
                     .attr('r', 3)
                     .attr('cx', (d, i) => (i % numPerRow) * 12 + padding)
-                    .attr('cy', (d, i) => (Math.floor(i / numPerRow) * 12 + padding));
+                    .attr('cy', (d, i) => (Math.floor(i / numPerRow) * 12 + padding + labelHeight));
 
                 this.svg
                     .selectAll("circle.gapper.student")
                     .transition()
                     .duration(750)
                     .attr("cx", (d, i) => (((i + numAccepted) % numPerRow) * 12 + padding))
-                    .attr("cy", (d, i) => (Math.floor((i + numAccepted) / numPerRow) * 12 + padding))
+                    .attr("cy", (d, i) => (Math.floor((i + numAccepted) / numPerRow) * 12 + padding + labelHeight))
 
                 this.svg
                     .selectAll("circle.gapper.student")
@@ -242,14 +270,14 @@ class D3comp1 extends D3Component {
                     .duration(750)
                     .attr("r", 3)
                     .attr('cx', (d, i) => (i % numPerRow * 12 + padding + 12 * (numPerRow + 2)))
-                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding)
+                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
 
                 this.svg
                     .selectAll("circle.gapper2024")
                     .transition()
                     .duration(750)
                     .attr('cx', (d, i) => ((i + numAccepted2024) % numPerRow * 12 + padding + 12 * (numPerRow + 2)))
-                    .attr('cy', (d, i) => Math.floor((i + numAccepted2024) / numPerRow) * 12 + padding)
+                    .attr('cy', (d, i) => Math.floor((i + numAccepted2024) / numPerRow) * 12 + padding + labelHeight)
 
                 this.svg
                     .selectAll("circle.gapper2024")
@@ -261,7 +289,7 @@ class D3comp1 extends D3Component {
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
-                        {label: "One admitted student", color: "#000000"},
+                        {label: "One admitted student", color: "#ffffff"},
                         {label: "Deferred enrollment", color: "blue"},
                     ]));
 
@@ -278,25 +306,25 @@ class D3comp1 extends D3Component {
 
                 this.svg
                     .selectAll("circle.student")
-                    .style("fill", "#000000")
+                    .style("fill", "#ffffff")
                     .transition()
                     .duration(750)
                     .attr("r", 3)
                     .attr('cx', (d, i) => (i % numPerRow * 12 + padding))
-                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding)
+                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
 
                 this.svg
                     .selectAll("circle.student2024")
-                    .style("fill", "#000000")
+                    .style("fill", "#ffffff")
                     .transition()
                     .duration(750)
                     .attr("r", 3)
                     .attr('cx', (d, i) => (i % numPerRow * 12 + padding + 12 * (numPerRow + 2)))
-                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding)
+                    .attr('cy', (d, i) => Math.floor(i / numPerRow) * 12 + padding + labelHeight)
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
-                        {label: "One enrolled student", color: "#000000"},
+                        {label: "One enrolled student", color: "#ffffff"},
                     ]));
 
                 break;
@@ -318,7 +346,7 @@ class D3comp1 extends D3Component {
                     multiracial: "#00A5BC",
                     international: "#00C8A3",
                     white: "#88E581",
-                    unknown: "#000000",
+                    unknown: "#ffffff",
                 };
 
                 this.svg
@@ -330,7 +358,7 @@ class D3comp1 extends D3Component {
                             if (i < cutoffPair[1]) return categoryColors[cutoffPair[0]];
                         }
 
-                        return "#000000";
+                        return "#ffffff";
                     })
 
                 this.svg
@@ -342,12 +370,12 @@ class D3comp1 extends D3Component {
                             if (i < cutoffPair[1]) return categoryColors[cutoffPair[0]];
                         }
 
-                        return "#000000";
+                        return "#ffffff";
                     })
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
-                        {label: "One enrolled student", color: "#000000"},
+                        {label: "One enrolled student", color: "#ffffff"},
                     ]));
 
                 break;
@@ -357,17 +385,17 @@ class D3comp1 extends D3Component {
                     .selectAll("circle.student")
                     .transition()
                     .duration(750)
-                    .style("fill", (d, i) => (i < 0.13 * numStudents ? "blue" : "#000000"))
+                    .style("fill", (d, i) => (i < 0.13 * numStudents ? "blue" : "#ffffff"))
 
                 this.svg
                     .selectAll("circle.student2024")
                     .transition()
                     .duration(750)
-                    .style("fill", (d, i) => (i < 0.28 * numStudents2024 ? "blue" : "#000000"))
+                    .style("fill", (d, i) => (i < 0.28 * numStudents2024 ? "blue" : "#ffffff"))
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
-                        {label: "One enrolled student", color: "#000000"},
+                        {label: "One enrolled student", color: "#ffffff"},
                         {label: "FLI student", color: "blue"},
                     ]));
 
@@ -378,17 +406,17 @@ class D3comp1 extends D3Component {
                     .selectAll("circle.student")
                     .transition()
                     .duration(750)
-                    .style("fill", (d, i) => (i < 17 ? "#F06FBC" : i < 35 ? "#88E581" : i < (0.13 * numStudents2024) ? "blue" : "#000000"))
+                    .style("fill", (d, i) => (i < 17 ? "#F06FBC" : i < 35 ? "#88E581" : i < (0.13 * numStudents2024) ? "blue" : "#ffffff"))
 
                 this.svg
                     .selectAll("circle.student2024")
                     .transition()
                     .duration(750)
-                    .style("fill", (d, i) => (i < 16 ? "#F06FBC" : i < 36 ? "#88E581" : i < (0.28 * numStudents2024) ? "blue" : "#000000"))
+                    .style("fill", (d, i) => (i < 16 ? "#F06FBC" : i < 36 ? "#88E581" : i < (0.28 * numStudents2024) ? "blue" : "#ffffff"))
 
                 d3.select("#d3-legend")
                     .html(getLegendHtml([
-                        {label: "One enrolled student", color: "#000000"},
+                        {label: "One enrolled student", color: "#ffffff"},
                         {label: "FLI student", color: "blue"},
                         {label: "QuestBridge Match", color: "#F06FBC"},
                         {label: "Posse Scholar", color: "#88E581"},
