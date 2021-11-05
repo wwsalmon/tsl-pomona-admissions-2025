@@ -124,7 +124,7 @@ class D3comp1 extends D3Component {
             .append("text")
             .attr("class", "classLabel")
             .text(d => `co${d}`)
-            .attr("x", d => (d === 2024) ? padding : (containerWidth / 2))
+            .attr("x", d => ((d === 2024) ? padding : 500))
             .attr("y", 36)
             .style("opacity", 0)
             .attr("fill", "#ffffff")
