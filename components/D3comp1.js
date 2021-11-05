@@ -25,18 +25,20 @@ const percentages = {
     black: 0.07,
     latinx: 0.17,
     native: 0.01,
+    multiracial: 0.105,
     international: 0.15,
     white: 0.325,
-    unknown: 0.120,
+    unknown: 0.015,
 }
 
 const percentages2024 = {
     asian: 0.198,
     black: 0.108,
     latinx: 0.165,
+    multiracial: 0.073,
     international: 0.105,
     white: 0.306,
-    unknown: 0.118,
+    unknown: 0.045,
 }
 
 function getLegendHtml(data) {
@@ -332,7 +334,7 @@ class D3comp1 extends D3Component {
                 break;
             }
             case 5: {
-                const categories = ["black", "native", "latinx", "asian", "international", "white", "unknown"];
+                const categories = ["black", "native", "latinx", "asian", "multiracial", "international", "white", "unknown"];
                 const categoryNums = categories.map(d => numStudents * percentages[d]);
                 const categoryNums2024 = categories.map(d => numStudents2024 * (percentages2024[d] || 0));
                 const categoryCutoffs = categories.map((d, i) => [d, categoryNums.slice(0, i + 1).reduce((a, b) => a + b, 0)]);
@@ -345,7 +347,7 @@ class D3comp1 extends D3Component {
                     native: "#A465BE",
                     latinx: "#4D5BAC",
                     asian: "#00549C",
-                    // multiracial: "#00A5BC",
+                    multiracial: "#00A5BC",
                     international: "#00C8A3",
                     white: "#88E581",
                     unknown: "#ffffff",

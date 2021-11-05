@@ -11,16 +11,17 @@ class CustomComponent extends React.Component {
             "Multiracial": "#00A5BC",
             "International": "#00C8A3",
             "White": "#88E581",
-            "Unknown": "#000000",
+            "Unknown": "#ffffff",
         };
 
         const raceData = [
-            {"label": "Black/African American", 2025: "🔻 7%", 2024: "10.8%"},
-            {"label": "Latinx", 2025: "🔻 15.5%", 2024: "16.5%"},
-            {"label": "Asian American", 2025: "🔻 15.5%", 2024: "19.8%"},
-            {"label": "International", 2025: "🔼 15%", 2024: "10.5%"},
-            {"label": "White", 2025: "🔼 32.5%", 2024: "30.6%"},
-            {"label": "Unknown/Other", 2025: "14.5%", 2024: "11.8%"},
+            {"label": "Black/African American", 2025: "🔻 7% (-35%)", 2024: "10.8%"},
+            {"label": "Asian American", 2025: "🔻 15.5% (-22%)", 2024: "19.8%"},
+            {"label": "Latinx", 2025: "🔼 17% (+3%)", 2024: "16.5%"},
+            {"label": "Multiracial", 2025: "🔼 10.5% (+44%)", 2024: "7.3%"},
+            {"label": "International", 2025: "🔼 15% (+43%)", 2024: "10.5%"},
+            {"label": "White", 2025: "🔼 32.5% (+6%)", 2024: "30.6%"},
+            {"label": "Unknown", 2025: "2.5%", 2024: "4.5%"},
         ]
 
         return (
